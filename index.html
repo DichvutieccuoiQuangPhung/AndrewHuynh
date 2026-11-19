@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dịch Vụ Dựng Rạp Đám Cưới Quang Phụng — Sang Trọng & Đẳng Cấp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Montserrat"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: '#FFFDF9',
+                        creamDark: '#F6EFE4',
+                        blush: '#F9E6EA',
+                        blushDeep: '#E8B8C2',
+                        gold: '#C59B27',
+                        goldLight: '#E5C466',
+                        goldDark: '#9A7412',
+                        ink: '#2C221E',
+                        inkMuted: '#6B5B53',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', system-ui, sans-serif;
+            background-color: #FFFDF9;
+            color: #2C221E;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* ================= 5-SECOND DRAGON & PHOENIX INTRO ================= */
+        #qp-intro-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: radial-gradient(circle at 50% 42%, #FFF8EC 0%, #F9E6EA 52%, #EBD6C2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.8s;
+        }
+        #qp-intro-overlay.intro-exit {
+            opacity: 0;
+            transform: scale(1.04);
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .intro-halo {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 9999px;
+            border: 1px dashed rgba(197, 155, 39, 0.45);
+            animation: spinSlow 14s linear infinite;
+        }
+        .intro-halo-inner {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 9999px;
+            border: 1px solid rgba(197, 155, 39, 0.25);
+            animation: pulseRing 2.5s ease-in-out infinite;
+        }
+
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes pulseRing {
+            0%, 100% { transform: scale(0.96); opacity: 0.55; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .dragon-flight {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            top: 50%;
+            left: 50%;
+            margin-top: -70px;
+            margin-left: -70px;
+            animation: dragonOrbit5s 5s cubic-bezier(0.37, 0, 0.63, 1) forwards;
+            filter: drop-shadow(0 8px 16px rgba(154, 116, 18, 0.35));
+        }
+        .phoenix-flight {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            top: 50%;
+            left: 50%;
+            margin-top: -70px;
+            margin-left: -70px;
+            animation: phoenixOrbit5s 5s cubic-bezier(0.37, 0, 0.63, 1) forwards;
+            filter: drop-shadow(0 8px 16px rgba(197, 120, 120, 0.35));
+        }
+
+        @keyframes dragonOrbit5s {
+            0% {
+                transform: translate(-180px, -65px) rotate(-18deg) scale(0.75);
+                opacity: 0;
+            }
+            15% { opacity: 1; }
+            50% {
+                transform: translate(115px, -85px) rotate(16deg) scale(1.06);
+                opacity: 1;
+            }
+            82% {
+                transform: translate(-125px, 65px) rotate(-14deg) scale(0.98);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-64px, -12px) rotate(0deg) scale(0.72);
+                opacity: 0.92;
+            }
+        }
+
+        @keyframes phoenixOrbit5s {
+            0% {
+                transform: translate(180px, 65px) rotate(18deg) scale(0.75);
+                opacity: 0;
+            }
+            15% { opacity: 1; }
+            50% {
+                transform: translate(-115px, 85px) rotate(-16deg) scale(1.06);
+                opacity: 1;
+            }
+            82% {
+                transform: translate(125px, -65px) rotate(14deg) scale(0.98);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(64px, 12px) rotate(0deg) scale(0.72);
+                opacity: 0.92;
+            }
+        }
+
+        .wing-flap {
+            transform-origin: 50% 50%;
+            animation: wingBeat 0.7s ease-in-out infinite alternate;
+        }
+        @keyframes wingBeat {
+            0% { transform: scaleY(0.86) rotate(-4deg); }
+            100% { transform: scaleY(1.12) rotate(5deg); }
+        }
+
+        .qp-emblem-center {
+            position: relative;
+            z-index: 10;
+            animation: emblemReveal 1.2s ease-out forwards;
+        }
+        @keyframes emblemReveal {
+            0% { transform: scale(0.82); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .gold-shimmer-text {
+            background: linear-gradient(90deg, #9A7412 0%, #E5C466 35%, #C59B27 50%, #E5C466 65%, #9A7412 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmerGold 3s linear infinite;
+        }
+        @keyframes shimmerGold {
+            to { background-position: 200% center; }
+        }
+
+        .luxury-card {
+            background: rgba(255, 253, 249, 0.94);
+            border: 1px solid rgba(197, 155, 39, 0.25);
+            box-shadow: 0 12px 35px -12px rgba(44, 34, 30, 0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .luxury-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px -14px rgba(197, 155, 39, 0.22);
+            border-color: rgba(197, 155, 39, 0.55);
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #F6EFE4; }
+        ::-webkit-scrollbar-thumb { background: #D4B45A; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #C59B27; }
+    </style>
+</head>
+<body class="bg-cream text-ink antialiased selection:bg-blush selection:text-ink">
+
+    <!-- Toast Notification Banner -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-[10000] flex flex-col gap-2.5 max-w-sm w-full px-4 sm:px-0 pointer-events-none"></div>
+
+    <!-- ==================== 1. 5-SECOND DRAGON & PHOENIX INTRO ==================== -->
+    <div id="qp-intro-overlay" role="dialog" aria-label="Hiệu ứng chào mừng Rồng Phượng Quang Phụng">
+        <div class="relative flex flex-col items-center justify-center w-full max-w-xl px-6 py-10 text-center">
+            <div class="intro-halo"></div>
+            <div class="intro-halo-inner"></div>
+
+            <div class="dragon-flight" aria-hidden="true">
+                <svg viewBox="0 0 160 160" class="w-full h-full">
+                    <defs>
+                        <linearGradient id="dragonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#F3D678" />
+                            <stop offset="50%" stop-color="#C59B27" />
+                            <stop offset="100%" stop-color="#8F670D" />
+                        </linearGradient>
+                    </defs>
+                    <g class="wing-flap">
+                        <path d="M18 112 C42 128, 62 72, 84 82 C104 91, 96 46, 124 44 C136 43, 145 50, 148 58"
+                              fill="none" stroke="url(#dragonGrad)" stroke-width="9" stroke-linecap="round" />
+                        <path d="M56 96 L52 84 L64 90 M78 82 L75 68 L87 76 M102 64 L100 50 L111 58"
+                              fill="none" stroke="#E5C466" stroke-width="3" stroke-linecap="round" />
+                        <path d="M124 44 L144 40 L150 48 L138 56 L124 54 Z" fill="url(#dragonGrad)" />
+                        <path d="M132 41 L126 24 M138 41 L138 23" stroke="#C59B27" stroke-width="3" stroke-linecap="round" />
+                        <path d="M148 48 C158 46, 160 56, 152 60" fill="none" stroke="#E5C466" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="154" cy="44" r="5" fill="#FFFDF9" stroke="#C59B27" stroke-width="2" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="phoenix-flight" aria-hidden="true">
+                <svg viewBox="0 0 160 160" class="w-full h-full">
+                    <defs>
+                        <linearGradient id="phoenixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#F6B8C4" />
+                            <stop offset="55%" stop-color="#D49A2A" />
+                            <stop offset="100%" stop-color="#9A7412" />
+                        </linearGradient>
+                    </defs>
+                    <g class="wing-flap">
+                        <path d="M138 46 C114 38, 96 86, 72 80 C52 75, 42 114, 16 122"
+                              fill="none" stroke="url(#phoenixGrad)" stroke-width="7" stroke-linecap="round" />
+                        <path d="M128 54 C106 58, 92 98, 66 92 C46 88, 34 124, 12 132"
+                              fill="none" stroke="#E8B8C2" stroke-width="4" stroke-linecap="round" />
+                        <path d="M80 78 C64 46, 38 38, 22 52 C42 54, 56 64, 68 82 Z" fill="url(#phoenixGrad)" opacity="0.92" />
+                        <circle cx="88" cy="72" r="8" fill="url(#phoenixGrad)" />
+                        <path d="M95 72 L106 75 L95 78 Z" fill="#C59B27" />
+                        <path d="M86 64 L82 52 M89 64 L91 51 M92 65 L99 55" stroke="#C59B27" stroke-width="2.5" stroke-linecap="round" />
+                    </g>
+                </svg>
+            </div>
+
+            <div class="qp-emblem-center flex flex-col items-center">
+                <div class="w-28 h-28 rounded-full bg-cream/95 border-2 border-gold shadow-xl flex flex-col items-center justify-center relative">
+                    <span class="text-[10px] uppercase tracking-[0.28em] text-goldDark font-semibold">Long Phụng</span>
+                    <span class="font-display text-5xl font-bold gold-shimmer-text leading-none my-0.5">QP</span>
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-inkMuted">Quang Phụng</span>
+                </div>
+
+                <p class="mt-6 font-display italic text-2xl sm:text-3xl text-ink">
+                    Long Phụng Sum Vầy — Trăm Năm Hạnh Phúc
+                </p>
+                <p class="mt-1 text-xs sm:text-sm uppercase tracking-[0.22em] text-goldDark font-medium">
+                    Dịch Vụ Dựng Rạp Đám Cưới Quang Phụng
+                </p>
+
+                <div class="mt-6 w-64 sm:w-72">
+                    <div class="flex items-center justify-between text-[11px] text-inkMuted mb-1.5">
+                        <span>Đang vào không gian tiệc cưới...</span>
+                        <span id="intro-countdown-text" class="font-semibold text-goldDark">5.0s</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-creamDark rounded-full overflow-hidden border border-gold/25">
+                        <div id="intro-progress-bar" class="h-full bg-gradient-to-r from-goldDark via-gold to-goldLight rounded-full transition-all duration-100" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    id="btn-skip-intro"
+                    class="mt-6 inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-ink text-cream text-xs uppercase tracking-[0.18em] font-semibold shadow-md hover:bg-goldDark transition active:scale-95"
+                >
+                    <span>Bỏ qua / Vào ngay</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 2. NAVIGATION BAR ==================== -->
+    <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
+            <a href="#top" class="flex items-center gap-3 group shrink-0">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blush via-cream to-creamDark border border-gold flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                    <svg viewBox="0 0 64 64" class="w-10 h-10" aria-hidden="true">
+                        <path d="M12 44 C14 22, 30 12, 46 18" fill="none" stroke="#C59B27" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M52 44 C50 22, 34 12, 18 18" fill="none" stroke="#D99BA8" stroke-width="2.5" stroke-linecap="round" />
+                        <text x="32" y="39" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-size="21" fill="#9A7412">QP</text>
+                    </svg>
+                </div>
+                <div>
+                    <div class="font-display text-lg sm:text-xl font-bold tracking-wide text-ink leading-tight">
+                        Quang Phụng
+                    </div>
+                    <div class="text-[10px] uppercase tracking-[0.2em] text-goldDark font-medium">
+                        Rạp Cưới &amp; Trang Trí
+                    </div>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-7 text-xs uppercase tracking-[0.16em] font-medium text-inkMuted">
+                <a href="#dich-vu" class="hover:text-goldDark transition">Hạng mục</a>
+                <a href="#thu-vien" class="hover:text-goldDark transition">Thư viện ảnh &amp; video</a>
+                <a href="#quy-trinh" class="hover:text-goldDark transition">Quy trình</a>
+                <a href="#lien-he" class="hover:text-goldDark transition">Liên hệ</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button
+                    type="button"
+                    id="btn-replay-intro"
+                    title="Xem lại hiệu ứng Rồng Phượng 5 giây"
+                    class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full border border-gold/40 bg-creamDark/70 hover:bg-blush/60 text-ink text-[11px] font-medium transition active:scale-95"
+                >
+                    <svg class="w-3.5 h-3.5 text-goldDark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="hidden sm:inline">Xem lại Intro</span>
+                </button>
+
+                <div id="admin-auth-controls" class="flex items-center gap-2">
+                    <button
+                        type="button"
+                        id="btn-open-admin-login"
+                        class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-gradient-to-r from-goldDark to-gold text-cream text-[11px] font-semibold uppercase tracking-[0.12em] shadow-sm hover:opacity-95 transition active:scale-95"
+                    >
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        <span>Đăng nhập Quản trị</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Mode Banner -->
+    <div id="admin-active-banner" class="hidden bg-gradient-to-r from-ink via-[#3B2D26] to-ink text-cream border-b border-gold/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-goldLight animate-pulse"></span>
+                <span class="font-medium text-goldLight">Chế độ Quản trị (Admin):</span>
+                <span class="text-cream/90">Thêm hoặc xóa ảnh &amp; video trên web sẽ đồng bộ cho mọi người khi đã cấu hình Firebase Realtime Database.</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button
+                    type="button"
+                    id="btn-open-change-pin"
+                    class="px-3 py-1 rounded-full bg-cream/10 hover:bg-cream/20 border border-gold/40 text-goldLight text-[11px] font-medium transition"
+                >
+                    Đổi mã PIN
+                </button>
+                <button
+                    type="button"
+                    id="btn-admin-logout"
+                    class="px-3 py-1 rounded-full bg-blushDeep/25 hover:bg-blushDeep/40 border border-blushDeep/50 text-blush text-[11px] font-semibold transition"
+                >
+                    Đăng xuất
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 3. HERO SECTION ==================== -->
+    <section id="top" class="relative overflow-hidden bg-gradient-to-b from-blush/55 via-cream to-cream pt-12 pb-16 sm:pt-16 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream border border-gold/30 shadow-xs mb-5">
+                    <span class="w-2 h-2 rounded-full bg-gold"></span>
+                    <span class="text-[11px] uppercase tracking-[0.22em] text-goldDark font-semibold">
+                        Dịch Vụ Cưới Hỏi Trọn Gói • Quang Phụng
+                    </span>
+                </div>
+
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.12]">
+                    Dựng Rạp Đám Cưới <br />
+                    <span class="text-goldDark italic font-semibold">Long Phụng Sum Vầy</span> &amp; Tinh Tế
+                </h1>
+
+                <p class="mt-5 text-sm sm:text-base text-inkMuted leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Kiến tạo không gian lễ gia tiên, cổng hoa tươi - hoa lụa cao cấp, nhà rạp không gian sang trọng và sân khấu tiệc cưới lung linh. Tỉ mỉ từng chi tiết để ngày trọng đại của đôi uyên ương thêm trọn vẹn.
+                </p>
+
+                <div class="mt-7 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+                    <a
+                        href="#dich-vu"
+                        class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-goldDark via-gold to-goldDark text-cream text-xs uppercase tracking-[0.18em] font-semibold shadow-md hover:shadow-lg transition text-center"
+                    >
+                        Khám phá hạng mục
+                    </a>
+                    <a
+                        href="tel:0375212379"
+                        class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-cream border border-gold/50 text-ink hover:bg-blush/50 text-xs font-semibold tracking-wide transition flex items-center justify-center gap-2"
+                    >
+                        <span>Hotline: 0375 212 379</span>
+                    </a>
+                    <a
+                        href="tel:0974207348"
+                        class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-cream border border-gold/50 text-ink hover:bg-blush/50 text-xs font-semibold tracking-wide transition flex items-center justify-center gap-2"
+                    >
+                        <span>0974 207 348</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <div class="relative rounded-3xl overflow-hidden border-2 border-gold/35 shadow-2xl bg-creamDark aspect-[4/3]">
+                    <img
+                        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80"
+                        onerror="this.src='https://placehold.co/800x600/F9E6EA/9A7412?text=Quang+Phung+Wedding'"
+                        alt="Không gian trang trí tiệc cưới sang trọng Quang Phụng"
+                        class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 via-ink/35 to-transparent p-5 text-cream">
+                        <div class="text-[10px] uppercase tracking-[0.22em] text-goldLight font-semibold">Biểu tượng QP • Rồng Phượng</div>
+                        <div class="font-display text-2xl font-semibold mt-0.5">Không Gian Cưới Đẳng Cấp</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. SERVICE CATEGORIES SECTION ==================== -->
+    <section id="dich-vu" class="py-16 sm:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-[0.24em] text-goldDark font-semibold">Hạng Mục Dịch Vụ</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold text-ink mt-2">
+                    Dịch Vụ Dựng Rạp &amp; Trang Trí Cưới
+                </h2>
+                <p class="mt-3 text-sm text-inkMuted">
+                    Nhấn vào từng hạng mục để xem chi tiết, xem ảnh/video thực tế hoặc quản lý tư liệu (dành cho Quản trị viên).
+                </p>
+            </div>
+
+            <div id="categories-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. WEDDING GALLERY & VIDEO SHOWCASE ==================== -->
+    <section id="thu-vien" class="py-16 sm:py-24 bg-creamDark/65 border-y border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.24em] text-goldDark font-semibold">Thư Viện Thực Tế</span>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold text-ink mt-2">
+                        Ảnh &amp; Video Công Trình Đã Thi Công
+                    </h2>
+                    <p class="mt-2 text-sm text-inkMuted max-w-xl">
+                        Tổng hợp hình ảnh và video thực tế từ các lễ cưới do Quang Phụng thực hiện. Hỗ trợ phát trực tiếp video YouTube, MP4 và xem ảnh phóng to.
+                    </p>
+                </div>
+
+                <div id="gallery-admin-actions" class="flex items-center gap-3">
+                    <button
+                        type="button"
+                        id="btn-add-gallery-media"
+                        class="hidden items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-goldDark to-gold text-cream text-xs font-semibold uppercase tracking-[0.14em] shadow-md hover:opacity-95 transition active:scale-95"
+                    >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <span>Thêm ảnh / video</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="gallery-filter-tabs" class="flex flex-wrap items-center gap-2.5 mb-8"></div>
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            <div id="gallery-empty" class="hidden text-center py-14 rounded-2xl bg-cream border border-dashed border-gold/40">
+                <p class="font-display text-2xl text-ink">Chưa có ảnh hoặc video nào trong mục này</p>
+                <p class="text-xs text-inkMuted mt-1">Vui lòng chọn bộ lọc khác hoặc đăng nhập Quản trị để thêm tư liệu mới.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. WORKFLOW & CONTACT SECTION ==================== -->
+    <section id="quy-trinh" class="py-16 sm:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-[0.24em] text-goldDark font-semibold">Quy Trình Phục Vụ</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-ink mt-2">
+                    Chuẩn Bị Chu Đáo — Đúng Hẹn — Sang Trọng
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div class="luxury-card rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-full bg-blush text-goldDark font-display font-bold text-xl flex items-center justify-center mb-4">01</div>
+                    <h3 class="font-display text-2xl font-bold text-ink">Khảo Sát &amp; Tư Vấn</h3>
+                    <p class="text-sm text-inkMuted mt-2 leading-relaxed">
+                        Đo đạc không gian sân vườn/nhà hàng, tư vấn phong cách màu sắc, cổng hoa, nhà rạp và gia tiên phù hợp ngân sách gia đình.
+                    </p>
+                </div>
+                <div class="luxury-card rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-full bg-blush text-goldDark font-display font-bold text-xl flex items-center justify-center mb-4">02</div>
+                    <h3 class="font-display text-2xl font-bold text-ink">Dựng Khung &amp; Trang Trí</h3>
+                    <p class="text-sm text-inkMuted mt-2 leading-relaxed">
+                        Thi công khung rạp chắc chắn, thẩm mỹ, lắp đặt hệ thống ánh sáng, hoa trang trí và bàn ghế tiệc cưới chỉnh chu trước giờ đón khách.
+                    </p>
+                </div>
+                <div class="luxury-card rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-full bg-blush text-goldDark font-display font-bold text-xl flex items-center justify-center mb-4">03</div>
+                    <h3 class="font-display text-2xl font-bold text-ink">Đồng Hành &amp; Tháo Dỡ</h3>
+                    <p class="text-sm text-inkMuted mt-2 leading-relaxed">
+                        Hỗ trợ kỹ thuật xuyên suốt buổi lễ để cô dâu chú rể an tâm tiếp khách, thu dọn gọn gàng sau khi buổi tiệc khép lại.
+                    </p>
+                </div>
+            </div>
+
+            <div id="lien-he" class="rounded-3xl bg-gradient-to-br from-blush/65 via-creamDark to-blush/45 border border-gold/35 p-8 sm:p-12 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="text-xs uppercase tracking-[0.24em] text-goldDark font-semibold">Đặt Lịch Tư Vấn</span>
+                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-ink mt-2">
+                            Liên Hệ Dịch Vụ Dựng Rạp Đám Cưới Quang Phụng
+                        </h2>
+                        <p class="text-sm text-inkMuted mt-3 max-w-xl leading-relaxed">
+                            Giữ lịch ngày đẹp sớm để được khảo sát mặt bằng và lên phương án thiết kế rạp cưới, cổng hoa và gia tiên hoàn hảo nhất.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col gap-3.5">
+                        <a href="tel:0375212379" class="flex items-center justify-between px-5 py-4 rounded-2xl bg-cream border border-gold/35 hover:border-gold transition shadow-xs">
+                            <div>
+                                <div class="text-[11px] uppercase tracking-wider text-inkMuted">Hotline 1</div>
+                                <div class="text-lg font-bold text-ink">0375 212 379</div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-blush text-goldDark text-xs font-semibold">Gọi ngay</span>
+                        </a>
+                        <a href="tel:0974207348" class="flex items-center justify-between px-5 py-4 rounded-2xl bg-cream border border-gold/35 hover:border-gold transition shadow-xs">
+                            <div>
+                                <div class="text-[11px] uppercase tracking-wider text-inkMuted">Hotline 2</div>
+                                <div class="text-lg font-bold text-ink">0974 207 348</div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-blush text-goldDark text-xs font-semibold">Gọi ngay</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. FOOTER ==================== -->
+    <footer class="bg-ink text-cream/90 py-10 border-t border-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <div class="font-display text-2xl font-bold text-goldLight">Dịch Vụ Dựng Rạp Đám Cưới Quang Phụng</div>
+                <p class="text-xs text-cream/70 mt-1">Hotline: 0375 212 379 • 0974 207 348 • Biểu tượng Rồng Phượng QP</p>
+            </div>
+            <div class="text-xs text-cream/70">
+                © <span id="current-year"></span> Quang Phụng Wedding. Trân trọng từng khoảnh khắc hạnh phúc.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== 8. CATEGORY DETAIL & MEDIA MODAL ==================== -->
+    <div id="category-modal" class="fixed inset-0 z-50 hidden bg-ink/65 backdrop-blur-xs overflow-y-auto p-4 sm:p-6" role="dialog" aria-modal="true">
+        <div class="max-w-4xl mx-auto my-6 rounded-3xl bg-cream border border-gold/40 shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-6 py-4 bg-creamDark border-b border-gold/25">
+                <div>
+                    <span id="cat-modal-badge" class="text-[10px] uppercase tracking-[0.22em] text-goldDark font-semibold">Chi tiết hạng mục</span>
+                    <h3 id="cat-modal-title" class="font-display text-2xl sm:text-3xl font-bold text-ink"></h3>
+                </div>
+                <button type="button" id="btn-close-cat-modal" class="p-2 rounded-full hover:bg-blush/60 text-ink transition" aria-label="Đóng cửa sổ">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-6">
+                <p id="cat-modal-desc" class="text-sm text-inkMuted leading-relaxed"></p>
+
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-gold/20">
+                    <h4 class="font-display text-2xl font-bold text-ink">Ảnh &amp; Video Thực Tế Của Hạng Mục</h4>
+                    <button
+                        type="button"
+                        id="btn-cat-add-media"
+                        class="hidden items-center gap-1.5 px-4 py-2 rounded-full bg-goldDark text-cream text-xs font-semibold hover:opacity-95 transition"
+                    >
+                        <span>+ Thêm ảnh / video vào hạng mục</span>
+                    </button>
+                </div>
+
+                <div id="cat-modal-media-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 9. ADD MEDIA MODAL (ADMIN ONLY) ==================== -->
+    <div id="add-media-modal" class="fixed inset-0 z-50 hidden bg-ink/70 backdrop-blur-xs overflow-y-auto p-4 sm:p-6" role="dialog" aria-modal="true">
+        <div class="max-w-xl mx-auto my-8 rounded-3xl bg-cream border border-gold/40 shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-6 py-4 bg-creamDark border-b border-gold/25">
+                <div>
+                    <span class="text-[10px] uppercase tracking-[0.22em] text-goldDark font-semibold">Quản trị viên • Đồng bộ đám mây</span>
+                    <h3 class="font-display text-2xl font-bold text-ink">Thêm Ảnh hoặc Video Thực Tế</h3>
+                </div>
+                <button type="button" id="btn-close-add-media" class="p-2 rounded-full hover:bg-blush/60 text-ink transition" aria-label="Đóng">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <form id="add-media-form" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Hạng mục áp dụng</label>
+                    <select id="media-category-select" class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark">
+                        <option value="cong-hoa">Cổng Hoa Cưới</option>
+                        <option value="nha-rap">Nhà Rạp Không Gian</option>
+                        <option value="san-khau-gia-tien">Sân Khấu &amp; Gia Tiên</option>
+                        <option value="thu-vien-mau">Thư Viện Ảnh / Video Mẫu Cưới</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Loại tư liệu</label>
+                        <select id="media-type-select" class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark">
+                            <option value="image">Ảnh (Image)</option>
+                            <option value="video">Video (YouTube / MP4 / File)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Nguồn tải lên</label>
+                        <select id="media-source-select" class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark">
+                            <option value="url">Dán link URL (Ảnh / YouTube / MP4)</option>
+                            <option value="file">Tải file từ máy (Ảnh / MP4 nhỏ)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Tiêu đề / Ghi chú</label>
+                    <input
+                        type="text"
+                        id="media-title-input"
+                        required
+                        placeholder="VD: Cổng hoa lễ gia tiên Quang Phụng"
+                        class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark"
+                    />
+                </div>
+
+                <div id="media-url-group">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Đường dẫn URL (Ảnh, YouTube hoặc MP4)</label>
+                    <input
+                        type="url"
+                        id="media-url-input"
+                        placeholder="https://... hoặc https://www.youtube.com/watch?v=... hoặc https://.../video.mp4"
+                        class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark"
+                    />
+                    <p class="text-[11px] text-inkMuted mt-1">Ưu tiên dán link ảnh trực tiếp, link YouTube hoặc link .mp4 để đồng bộ nhẹ và ai xem cũng thấy.</p>
+                </div>
+
+                <div id="media-file-group" class="hidden">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Chọn ảnh hoặc video từ thiết bị</label>
+                    <input
+                        type="file"
+                        id="media-file-input"
+                        accept="image/*,video/mp4,video/webm,video/ogg"
+                        class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2 text-xs text-ink file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:bg-blush file:text-goldDark file:font-semibold"
+                    />
+                    <p class="text-[11px] text-inkMuted mt-1">File chọn trực tiếp từ máy nên dung lượng nhỏ để tránh vượt giới hạn lưu trữ.</p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Xem trước</label>
+                    <div id="media-preview-box" class="w-full min-h-[180px] rounded-2xl bg-creamDark border border-gold/30 flex items-center justify-center overflow-hidden p-3 text-xs text-inkMuted">
+                        Nhập URL hoặc chọn file để xem trước nội dung...
+                    </div>
+                </div>
+
+                <div class="pt-2 flex items-center justify-end gap-3">
+                    <button type="button" id="btn-cancel-add-media" class="px-5 py-2.5 rounded-full border border-ink/20 text-xs font-semibold text-ink hover:bg-creamDark transition">
+                        Hủy
+                    </button>
+                    <button type="submit" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-goldDark to-gold text-cream text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
+                        Lưu tư liệu
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== 10. ADMIN LOGIN & PIN MODAL ==================== -->
+    <div id="admin-login-modal" class="fixed inset-0 z-50 hidden bg-ink/70 backdrop-blur-xs overflow-y-auto p-4 sm:p-6" role="dialog" aria-modal="true">
+        <div class="max-w-md mx-auto my-12 rounded-3xl bg-cream border border-gold/45 shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-6 py-4 bg-creamDark border-b border-gold/25">
+                <div>
+                    <span class="text-[10px] uppercase tracking-[0.22em] text-goldDark font-semibold">Xác thực quyền quản trị</span>
+                    <h3 class="font-display text-2xl font-bold text-ink">Đăng Nhập Quản Trị</h3>
+                </div>
+                <button type="button" id="btn-close-admin-login" class="p-2 rounded-full hover:bg-blush/60 text-ink transition" aria-label="Đóng">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <form id="admin-login-form" class="p-6 space-y-4">
+                <div class="p-3.5 rounded-2xl bg-blush/50 border border-gold/30 text-xs text-ink space-y-1">
+                    <div class="font-semibold text-goldDark">Thông tin quản trị mặc định:</div>
+                    <div>• Tài khoản: <span class="font-semibold">admin</span></div>
+                    <div>• Mã PIN mặc định: <span id="default-pin-hint" class="font-bold tracking-wider text-ink">8888</span></div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Tên đăng nhập Quản trị</label>
+                    <input
+                        type="text"
+                        id="admin-username-input"
+                        value="admin"
+                        required
+                        class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark"
+                    />
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Mã PIN Quản trị</label>
+                    <input
+                        type="password"
+                        id="admin-pin-input"
+                        required
+                        placeholder="Nhập mã PIN quản trị..."
+                        class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark"
+                    />
+                </div>
+
+                <p id="admin-login-error" class="hidden text-xs font-medium text-red-700 bg-red-50 border border-red-200 rounded-xl px-3 py-2"></p>
+
+                <button
+                    type="submit"
+                    class="w-full py-3 rounded-full bg-gradient-to-r from-goldDark via-gold to-goldDark text-cream text-xs font-semibold uppercase tracking-[0.16em] shadow-md hover:opacity-95 transition"
+                >
+                    Xác nhận đăng nhập
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Change PIN Modal -->
+    <div id="change-pin-modal" class="fixed inset-0 z-50 hidden bg-ink/70 backdrop-blur-xs overflow-y-auto p-4 sm:p-6" role="dialog" aria-modal="true">
+        <div class="max-w-md mx-auto my-12 rounded-3xl bg-cream border border-gold/45 shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-6 py-4 bg-creamDark border-b border-gold/25">
+                <div>
+                    <span class="text-[10px] uppercase tracking-[0.22em] text-goldDark font-semibold">Bảo mật quản trị</span>
+                    <h3 class="font-display text-2xl font-bold text-ink">Đổi Mã PIN Quản Trị</h3>
+                </div>
+                <button type="button" id="btn-close-change-pin" class="p-2 rounded-full hover:bg-blush/60 text-ink transition" aria-label="Đóng">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <form id="change-pin-form" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Mã PIN hiện tại</label>
+                    <input type="password" id="current-pin-input" required class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark" />
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-ink mb-1.5">Mã PIN mới (tối thiểu 4 ký tự)</label>
+                    <input type="password" id="new-pin-input" required minlength="4" class="w-full rounded-xl border border-gold/35 bg-white px-3.5 py-2.5 text-sm text-ink focus:outline-none focus:border-goldDark" />
+                </div>
+                <button type="submit" class="w-full py-3 rounded-full bg-gradient-to-r from-goldDark to-gold text-cream text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
+                    Lưu mã PIN mới
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-ink/85 backdrop-blur-xs flex items-center justify-center p-4" role="dialog" aria-modal="true">
+        <div class="max-w-4xl w-full rounded-3xl bg-cream border border-gold/40 overflow-hidden shadow-2xl">
+            <div class="flex items-center justify-between px-5 py-3.5 bg-creamDark border-b border-gold/25">
+                <h4 id="lightbox-title" class="font-display text-xl sm:text-2xl font-bold text-ink truncate pr-4"></h4>
+                <button type="button" id="btn-close-lightbox" class="p-1.5 rounded-full hover:bg-blush/60 text-ink transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="lightbox-content" class="p-4 sm:p-6 bg-ink/5 flex items-center justify-center min-h-[260px] max-h-[75vh] overflow-auto"></div>
+        </div>
+    </div>
+
+    <!-- ==================== 11. FIREBASE SDK & APPLICATION LOGIC ==================== -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            // =========================================================================
+            // CẤU HÌNH FIREBASE REALTIME DATABASE (Thay đúng thông tin dự án của bạn)
+            // =========================================================================
+            const FIREBASE_CONFIG = {
+                apiKey: 'THAY_API_KEY_CUA_BAN',
+                authDomain: 'THAY_PROJECT_ID.firebaseapp.com',
+                databaseURL: 'THAY_DATABASE_URL_CUA_BAN',
+                projectId: 'THAY_PROJECT_ID',
+                appId: 'THAY_APP_ID_CUA_BAN',
+            };
+            const FIREBASE_MEDIA_PATH = 'qp_wedding_media_v1';
+
+            // Storage Keys
+            const STORAGE_MEDIA_KEY = 'qp_wedding_media_cache_v1';
+            const STORAGE_PIN_KEY = 'qp_admin_pin_v1';
+            const STORAGE_ADMIN_SESSION_KEY = 'qp_admin_logged_in_v1';
+            const DEFAULT_ADMIN_PIN = '8888';
+
+            // Categories Definition
+            const CATEGORIES = [
+                {
+                    id: 'cong-hoa',
+                    title: 'Cổng Hoa Cưới',
+                    badge: 'Điểm nhấn đón khách',
+                    description: 'Thiết kế cổng hoa tươi, hoa lụa phối ánh kim, vải voan mềm mại và bảng tên cô dâu chú rể sang trọng theo tông màu yêu thích.',
+                    cover: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80',
+                },
+                {
+                    id: 'nha-rap',
+                    title: 'Nhà Rạp Không Gian',
+                    badge: 'Vững chãi & thẩm mỹ',
+                    description: 'Nhà rạp không gian trần phủ lụa kem - hồng phấn, đèn chùm pha lê/đèn led ấm áp, thoáng mát và bền vững trước mọi điều kiện thời tiết.',
+                    cover: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80',
+                },
+                {
+                    id: 'san-khau-gia-tien',
+                    title: 'Sân Khấu & Gia Tiên',
+                    badge: 'Trang nghiêm & ấm cúng',
+                    description: 'Không gian bàn thờ gia tiên trang trọng, ấm cúng cho nghi thức dâng hương - trao sính lễ cùng sân khấu đãi tiệc nổi bật, hài hòa tổng thể.',
+                    cover: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=900&q=80',
+                },
+            ];
+
+            // Default Media Fallback
+            const DEFAULT_MEDIA = [
+                {
+                    id: 'qp-default-1',
+                    category: 'cong-hoa',
+                    type: 'image',
+                    title: 'Cổng hoa vòm hồng phấn & vàng đồng',
+                    url: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80',
+                },
+                {
+                    id: 'qp-default-2',
+                    category: 'nha-rap',
+                    type: 'image',
+                    title: 'Nhà rạp trần lụa sang trọng cho tiệc cưới sân vườn',
+                    url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80',
+                },
+                {
+                    id: 'qp-default-3',
+                    category: 'san-khau-gia-tien',
+                    type: 'image',
+                    title: 'Không gian lễ gia tiên & bàn tiếp khách tinh tế',
+                    url: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=900&q=80',
+                },
+            ];
+
+            // Application State
+            let mediaItems = [];
+            let isAdminLoggedIn = false;
+            let currentAdminPin = DEFAULT_ADMIN_PIN;
+            let activeGalleryFilter = 'all';
+            let activeCategoryModalId = null;
+            let pendingFileDataUrl = null;
+            let dbRef = null;
+            let isFirebaseConfigured = false;
+
+            function showToast(message, type = 'success') {
+                const container = document.getElementById('toast-container');
+                const toast = document.createElement('div');
+                const borderClass = type === 'error' ? 'border-red-400 bg-red-50 text-red-900' : 'border-gold bg-cream text-ink';
+                toast.className = `pointer-events-auto px-4 py-3 rounded-2xl border shadow-lg text-xs font-medium flex items-center justify-between gap-3 transition-all ${borderClass}`;
+                toast.innerHTML = `<span>${escapeHtml(message)}</span>`;
+                container.appendChild(toast);
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(8px)';
+                    setTimeout(() => toast.remove(), 300);
+                }, 3400);
+            }
+
+            function escapeHtml(str) {
+                return String(str || '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+            }
+
+            function checkFirebaseConfigValid() {
+                return (
+                    FIREBASE_CONFIG &&
+                    typeof FIREBASE_CONFIG.apiKey === 'string' &&
+                    !FIREBASE_CONFIG.apiKey.startsWith('THAY_') &&
+                    typeof FIREBASE_CONFIG.databaseURL === 'string' &&
+                    !FIREBASE_CONFIG.databaseURL.startsWith('THAY_') &&
+                    FIREBASE_CONFIG.databaseURL.startsWith('https://')
+                );
+            }
+
+            function initFirebaseSync() {
+                isFirebaseConfigured = checkFirebaseConfigValid();
+                if (!isFirebaseConfigured || !window.firebase) {
+                    return;
+                }
+
+                try {
+                    if (!firebase.apps.length) {
+                        firebase.initializeApp(FIREBASE_CONFIG);
+                    }
+                    dbRef = firebase.database().ref(FIREBASE_MEDIA_PATH);
+
+                    dbRef.on('value', (snapshot) => {
+                        const val = snapshot.val();
+                        if (Array.isArray(val) && val.length > 0) {
+                            mediaItems = val.filter(Boolean);
+                            writeLocalMediaCache(mediaItems);
+                            syncAdminUI();
+                        } else if (val && typeof val === 'object') {
+                            const arr = Object.values(val).filter(Boolean);
+                            if (arr.length > 0) {
+                                mediaItems = arr;
+                                writeLocalMediaCache(mediaItems);
+                                syncAdminUI();
+                            }
+                        } else if (val === null) {
+                            // Khởi tạo dữ liệu ban đầu nếu nhánh Firebase đang trống
+                            dbRef.set(DEFAULT_MEDIA).catch((err) => console.error('Lỗi khởi tạo Firebase:', err));
+                        }
+                    }, (err) => {
+                        console.error('Lỗi đọc Firebase Realtime Database:', err);
+                        showToast('Không thể đọc dữ liệu từ Firebase. Kiểm tra lại cấu hình hoặc Rules.', 'error');
+                    });
+                } catch (err) {
+                    console.error('Lỗi khởi tạo Firebase SDK:', err);
+                }
+            }
+
+            function writeLocalMediaCache(list) {
+                try {
+                    localStorage.setItem(STORAGE_MEDIA_KEY, JSON.stringify(list));
+                } catch (err) {
+                    console.warn('Không lưu được cache localStorage:', err);
+                }
+            }
+
+            function loadState() {
+                try {
+                    const savedPin = localStorage.getItem(STORAGE_PIN_KEY);
+                    currentAdminPin = savedPin || DEFAULT_ADMIN_PIN;
+
+                    const hintEl = document.getElementById('default-pin-hint');
+                    if (hintEl) hintEl.textContent = currentAdminPin;
+
+                    const savedSession = sessionStorage.getItem(STORAGE_ADMIN_SESSION_KEY);
+                    isAdminLoggedIn = savedSession === 'true';
+
+                    const savedMediaRaw = localStorage.getItem(STORAGE_MEDIA_KEY);
+                    if (savedMediaRaw) {
+                        const parsed = JSON.parse(savedMediaRaw);
+                        mediaItems = Array.isArray(parsed) && parsed.length > 0 ? parsed : [...DEFAULT_MEDIA];
+                    } else {
+                        mediaItems = [...DEFAULT_MEDIA];
+                    }
+                } catch (err) {
+                    console.error('Lỗi tải dữ liệu cục bộ:', err);
+                    mediaItems = [...DEFAULT_MEDIA];
+                }
+            }
+
+            function saveMedia() {
+                writeLocalMediaCache(mediaItems);
+
+                if (isFirebaseConfigured && dbRef) {
+                    dbRef.set(mediaItems)
+                        .then(() => {
+                            showToast('Đã đồng bộ ảnh/video lên Firebase cho mọi người xem.');
+                        })
+                        .catch((err) => {
+                            console.error('Lỗi ghi Firebase:', err);
+                            showToast('Lưu máy thành công nhưng chưa ghi được lên Firebase. Kiểm tra Rules.', 'error');
+                        });
+                } else {
+                    showToast('Đã lưu trên máy này. Hãy điền FIREBASE_CONFIG để mọi người đều thấy.', 'error');
+                }
+            }
+
+            function getYouTubeEmbedUrl(url) {
+                if (!url) return null;
+                const regExp = /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+                const match = url.match(regExp);
+                return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+            }
+
+            function buildMediaPlayerHtml(item, compact = true) {
+                if (item.type === 'video') {
+                    const ytEmbed = getYouTubeEmbedUrl(item.url);
+                    if (ytEmbed) {
+                        const hClass = compact ? 'h-48' : 'w-full aspect-video';
+                        return `<iframe src="${escapeHtml(ytEmbed)}" class="w-full ${hClass} rounded-xl border border-gold/20" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+                    }
+                    const vClass = compact ? 'w-full h-48 object-cover rounded-xl bg-ink' : 'w-full max-h-[65vh] rounded-xl bg-ink';
+                    return `<video src="${escapeHtml(item.url)}" controls playsinline preload="metadata" class="${vClass}"></video>`;
+                }
+
+                const imgClass = compact
+                    ? 'w-full h-48 object-cover rounded-xl cursor-pointer hover:scale-[1.02] transition'
+                    : 'max-w-full max-h-[65vh] object-contain rounded-xl';
+                const fallback = 'https://placehold.co/600x400/F9E6EA/9A7412?text=Anh+Cuoi+Quang+Phung';
+                return `<img src="${escapeHtml(item.url)}" onerror="this.src='${fallback}'" alt="${escapeHtml(item.title)}" class="${imgClass}" data-lightbox-id="${escapeHtml(item.id)}" />`;
+            }
+
+            function syncAdminUI() {
+                const authControls = document.getElementById('admin-auth-controls');
+                const adminBanner = document.getElementById('admin-active-banner');
+                const btnAddGallery = document.getElementById('btn-add-gallery-media');
+                const btnCatAdd = document.getElementById('btn-cat-add-media');
+
+                if (isAdminLoggedIn) {
+                    authControls.innerHTML = `
+                        <span class="hidden md:inline-flex items-center px-3 py-1.5 rounded-full bg-blush text-goldDark text-[11px] font-semibold">
+                            Admin đang hoạt động
+                        </span>
+                        <button
+                            type="button"
+                            id="btn-header-logout"
+                            class="px-3.5 py-2 rounded-full bg-ink text-cream text-[11px] font-semibold uppercase tracking-[0.12em] hover:bg-ink/85 transition active:scale-95"
+                        >
+                            Đăng xuất
+                        </button>
+                    `;
+                    document.getElementById('btn-header-logout')?.addEventListener('click', handleAdminLogout);
+                    adminBanner.classList.remove('hidden');
+                    btnAddGallery.classList.remove('hidden');
+                    btnAddGallery.classList.add('inline-flex');
+                    btnCatAdd.classList.remove('hidden');
+                    btnCatAdd.classList.add('inline-flex');
+                } else {
+                    authControls.innerHTML = `
+                        <button
+                            type="button"
+                            id="btn-open-admin-login"
+                            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-gradient-to-r from-goldDark to-gold text-cream text-[11px] font-semibold uppercase tracking-[0.12em] shadow-sm hover:opacity-95 transition active:scale-95"
+                        >
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                            <span>Đăng nhập Quản trị</span>
+                        </button>
+                    `;
+                    document.getElementById('btn-open-admin-login')?.addEventListener('click', openAdminLoginModal);
+                    adminBanner.classList.add('hidden');
+                    btnAddGallery.classList.add('hidden');
+                    btnAddGallery.classList.remove('inline-flex');
+                    btnCatAdd.classList.add('hidden');
+                    btnCatAdd.classList.remove('inline-flex');
+                }
+
+                renderCategories();
+                renderGalleryFilters();
+                renderGalleryGrid();
+                if (activeCategoryModalId) {
+                    renderCategoryModalMedia(activeCategoryModalId);
+                }
+            }
+
+            function handleAdminLogout() {
+                isAdminLoggedIn = false;
+                sessionStorage.removeItem(STORAGE_ADMIN_SESSION_KEY);
+                syncAdminUI();
+                showToast('Đã đăng xuất khỏi chế độ Quản trị.');
+            }
+
+            function renderCategories() {
+                const grid = document.getElementById('categories-grid');
+                if (!grid) return;
+
+                grid.innerHTML = CATEGORIES.map((cat) => {
+                    const count = mediaItems.filter((m) => m.category === cat.id).length;
+                    return `
+                        <article class="luxury-card rounded-3xl overflow-hidden flex flex-col">
+                            <div class="relative aspect-[16/10] bg-creamDark overflow-hidden">
+                                <img
+                                    src="${escapeHtml(cat.cover)}"
+                                    onerror="this.src='https://placehold.co/800x500/F9E6EA/9A7412?text=${encodeURIComponent(cat.title)}'"
+                                    alt="${escapeHtml(cat.title)}"
+                                    class="w-full h-full object-cover"
+                                />
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-cream/95 text-goldDark text-[10px] font-semibold uppercase tracking-wider shadow-xs">
+                                    ${escapeHtml(cat.badge)}
+                                </span>
+                                <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-ink/80 text-cream text-[11px] font-medium">
+                                    ${count} ảnh / video
+                                </span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-ink">${escapeHtml(cat.title)}</h3>
+                                    <p class="mt-2 text-sm text-inkMuted leading-relaxed">${escapeHtml(cat.description)}</p>
+                                </div>
+                                <div class="mt-5 pt-4 border-t border-gold/15 flex items-center justify-between gap-2">
+                                    <button
+                                        type="button"
+                                        data-open-category="${escapeHtml(cat.id)}"
+                                        class="px-4 py-2 rounded-full bg-blush hover:bg-blushDeep/50 text-ink text-xs font-semibold transition"
+                                    >
+                                        Xem chi tiết &amp; tư liệu
+                                    </button>
+                                    ${isAdminLoggedIn ? `
+                                        <button
+                                            type="button"
+                                            data-quick-add-cat="${escapeHtml(cat.id)}"
+                                            class="px-3.5 py-2 rounded-full bg-goldDark text-cream text-xs font-semibold hover:opacity-95 transition"
+                                        >
+                                            + Thêm
+                                        </button>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+
+                grid.querySelectorAll('[data-open-category]').forEach((btn) => {
+                    btn.addEventListener('click', () => openCategoryModal(btn.getAttribute('data-open-category')));
+                });
+
+                grid.querySelectorAll('[data-quick-add-cat]').forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        if (!isAdminLoggedIn) return;
+                        openAddMediaModal(btn.getAttribute('data-quick-add-cat'));
+                    });
+                });
+            }
+
+            function renderGalleryFilters() {
+                const container = document.getElementById('gallery-filter-tabs');
+                if (!container) return;
+
+                const filters = [
+                    { key: 'all', label: 'Tất cả' },
+                    { key: 'cong-hoa', label: 'Cổng Hoa Cưới' },
+                    { key: 'nha-rap', label: 'Nhà Rạp Không Gian' },
+                    { key: 'san-khau-gia-tien', label: 'Sân Khấu & Gia Tiên' },
+                    { key: 'thu-vien-mau', label: 'Thư Viện Mẫu Cưới' },
+                ];
+
+                container.innerHTML = filters.map((f) => {
+                    const active = activeGalleryFilter === f.key;
+                    const cls = active
+                        ? 'bg-ink text-cream border-ink shadow-xs'
+                        : 'bg-cream text-inkMuted border-gold/30 hover:border-gold hover:text-ink';
+                    return `<button type="button" data-filter="${f.key}" class="px-4 py-2 rounded-full border text-xs font-medium transition ${cls}">${f.label}</button>`;
+                }).join('');
+
+                container.querySelectorAll('[data-filter]').forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        activeGalleryFilter = btn.getAttribute('data-filter');
+                        renderGalleryFilters();
+                        renderGalleryGrid();
+                    });
+                });
+            }
+
+            function getCategoryLabel(catId) {
+                const found = CATEGORIES.find((c) => c.id === catId);
+                if (found) return found.title;
+                if (catId === 'thu-vien-mau') return 'Thư Viện Mẫu Cưới';
+                return 'Tư liệu cưới';
+            }
+
+            function renderGalleryGrid() {
+                const grid = document.getElementById('gallery-grid');
+                const emptyEl = document.getElementById('gallery-empty');
+                if (!grid || !emptyEl) return;
+
+                const filtered = activeGalleryFilter === 'all'
+                    ? mediaItems
+                    : mediaItems.filter((item) => item.category === activeGalleryFilter);
+
+                if (filtered.length === 0) {
+                    grid.innerHTML = '';
+                    emptyEl.classList.remove('hidden');
+                    return;
+                }
+
+                emptyEl.classList.add('hidden');
+                grid.innerHTML = filtered.map((item) => {
+                    const deleteBtnHtml = isAdminLoggedIn
+                        ? `<button type="button" data-delete-media="${escapeHtml(item.id)}" class="px-3 py-1 rounded-full bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 text-[11px] font-semibold transition">Xóa</button>`
+                        : '';
+
+                    return `
+                        <div class="luxury-card rounded-2xl p-4 flex flex-col justify-between gap-3">
+                            <div>
+                                ${buildMediaPlayerHtml(item, true)}
+                                <div class="mt-3 flex items-center justify-between gap-2">
+                                    <span class="px-2.5 py-0.5 rounded-full bg-blush text-goldDark text-[10px] font-semibold uppercase tracking-wider">
+                                        ${escapeHtml(getCategoryLabel(item.category))}
+                                    </span>
+                                    <span class="text-[10px] uppercase tracking-wider text-inkMuted font-medium">
+                                        ${item.type === 'video' ? 'Video' : 'Ảnh'}
+                                    </span>
+                                </div>
+                                <h4 class="font-display text-xl font-bold text-ink mt-1.5">${escapeHtml(item.title)}</h4>
+                            </div>
+                            <div class="pt-2 border-t border-gold/15 flex items-center justify-between gap-2">
+                                <button type="button" data-lightbox-id="${escapeHtml(item.id)}" class="text-xs font-semibold text-goldDark hover:underline">
+                                    Phóng to / Xem lớn
+                                </button>
+                                ${deleteBtnHtml}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                bindMediaEvents(grid);
+            }
+
+            function bindMediaEvents(rootElement) {
+                rootElement.querySelectorAll('[data-lightbox-id]').forEach((el) => {
+                    el.addEventListener('click', () => {
+                        const id = el.getAttribute('data-lightbox-id');
+                        const item = mediaItems.find((m) => m.id === id);
+                        if (item) openLightbox(item);
+                    });
+                });
+
+                rootElement.querySelectorAll('[data-delete-media]').forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        if (!isAdminLoggedIn) {
+                            showToast('Chỉ Quản trị viên mới có quyền xóa ảnh/video.', 'error');
+                            return;
+                        }
+                        const id = btn.getAttribute('data-delete-media');
+                        mediaItems = mediaItems.filter((m) => m.id !== id);
+                        saveMedia();
+                        syncAdminUI();
+                    });
+                });
+            }
+
+            function openCategoryModal(categoryId) {
+                const cat = CATEGORIES.find((c) => c.id === categoryId);
+                if (!cat) return;
+                activeCategoryModalId = categoryId;
+
+                document.getElementById('cat-modal-badge').textContent = cat.badge;
+                document.getElementById('cat-modal-title').textContent = cat.title;
+                document.getElementById('cat-modal-desc').textContent = cat.description;
+
+                renderCategoryModalMedia(categoryId);
+                document.getElementById('category-modal').classList.remove('hidden');
+            }
+
+            function renderCategoryModalMedia(categoryId) {
+                const container = document.getElementById('cat-modal-media-grid');
+                const items = mediaItems.filter((m) => m.category === categoryId);
+
+                if (items.length === 0) {
+                    container.innerHTML = `<div class="col-span-full py-8 text-center text-sm text-inkMuted bg-creamDark/60 rounded-2xl border border-dashed border-gold/30">Hạng mục này chưa có ảnh hoặc video thực tế nào.</div>`;
+                    return;
+                }
+
+                container.innerHTML = items.map((item) => {
+                    const delBtn = isAdminLoggedIn
+                        ? `<button type="button" data-delete-media="${escapeHtml(item.id)}" class="px-3 py-1 rounded-full bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 text-[11px] font-semibold">Xóa</button>`
+                        : '';
+                    return `
+                        <div class="rounded-2xl bg-creamDark/50 border border-gold/25 p-3.5 flex flex-col justify-between gap-2.5">
+                            ${buildMediaPlayerHtml(item, true)}
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-display text-lg font-bold text-ink">${escapeHtml(item.title)}</span>
+                                ${delBtn}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                bindMediaEvents(container);
+            }
+
+            function openAddMediaModal(presetCategory = null) {
+                if (!isAdminLoggedIn) {
+                    showToast('Vui lòng đăng nhập Quản trị để thêm ảnh/video.', 'error');
+                    openAdminLoginModal();
+                    return;
+                }
+
+                const form = document.getElementById('add-media-form');
+                form.reset();
+                pendingFileDataUrl = null;
+
+                const catSelect = document.getElementById('media-category-select');
+                if (presetCategory) {
+                    catSelect.value = presetCategory;
+                } else if (activeCategoryModalId) {
+                    catSelect.value = activeCategoryModalId;
+                } else if (activeGalleryFilter !== 'all') {
+                    catSelect.value = activeGalleryFilter;
+                }
+
+                toggleSourceInputs();
+                updateMediaPreview();
+                document.getElementById('add-media-modal').classList.remove('hidden');
+            }
+
+            function toggleSourceInputs() {
+                const source = document.getElementById('media-source-select').value;
+                const urlGroup = document.getElementById('media-url-group');
+                const fileGroup = document.getElementById('media-file-group');
+                if (source === 'file') {
+                    urlGroup.classList.add('hidden');
+                    fileGroup.classList.remove('hidden');
+                } else {
+                    urlGroup.classList.remove('hidden');
+                    fileGroup.classList.add('hidden');
+                }
+                updateMediaPreview();
+            }
+
+            function updateMediaPreview() {
+                const previewBox = document.getElementById('media-preview-box');
+                const type = document.getElementById('media-type-select').value;
+                const source = document.getElementById('media-source-select').value;
+                const urlVal = document.getElementById('media-url-input').value.trim();
+
+                const activeSrc = source === 'file' ? pendingFileDataUrl : urlVal;
+                if (!activeSrc) {
+                    previewBox.innerHTML = '<span>Nhập URL hoặc chọn file để xem trước nội dung...</span>';
+                    return;
+                }
+
+                const previewItem = {
+                    id: 'preview',
+                    type: type,
+                    title: document.getElementById('media-title-input').value || 'Xem trước',
+                    url: activeSrc,
+                };
+                previewBox.innerHTML = buildMediaPlayerHtml(previewItem, true);
+            }
+
+            function openLightbox(item) {
+                document.getElementById('lightbox-title').textContent = item.title;
+                document.getElementById('lightbox-content').innerHTML = buildMediaPlayerHtml(item, false);
+                document.getElementById('lightbox-modal').classList.remove('hidden');
+            }
+
+            function openAdminLoginModal() {
+                document.getElementById('admin-login-error').classList.add('hidden');
+                document.getElementById('admin-pin-input').value = '';
+                document.getElementById('default-pin-hint').textContent = currentAdminPin;
+                document.getElementById('admin-login-modal').classList.remove('hidden');
+            }
+
+            let introTimerId = null;
+            let introIntervalId = null;
+
+            function startIntro5Seconds() {
+                const overlay = document.getElementById('qp-intro-overlay');
+                const progressBar = document.getElementById('intro-progress-bar');
+                const countdownText = document.getElementById('intro-countdown-text');
+
+                clearTimeout(introTimerId);
+                clearInterval(introIntervalId);
+
+                overlay.classList.remove('intro-exit');
+                const dragon = overlay.querySelector('.dragon-flight');
+                const phoenix = overlay.querySelector('.phoenix-flight');
+                if (dragon && phoenix) {
+                    dragon.style.animation = 'none';
+                    phoenix.style.animation = 'none';
+                    void dragon.offsetWidth;
+                    dragon.style.animation = '';
+                    phoenix.style.animation = '';
+                }
+
+                const durationMs = 5000;
+                const startTime = Date.now();
+                progressBar.style.width = '0%';
+                countdownText.textContent = '5.0s';
+
+                introIntervalId = setInterval(() => {
+                    const elapsed = Date.now() - startTime;
+                    const remaining = Math.max(0, (durationMs - elapsed) / 1000);
+                    const pct = Math.min(100, (elapsed / durationMs) * 100);
+                    progressBar.style.width = `${pct}%`;
+                    countdownText.textContent = `${remaining.toFixed(1)}s`;
+                }, 80);
+
+                introTimerId = setTimeout(() => {
+                    finishIntro();
+                }, durationMs);
+            }
+
+            function finishIntro() {
+                clearTimeout(introTimerId);
+                clearInterval(introIntervalId);
+                const overlay = document.getElementById('qp-intro-overlay');
+                const progressBar = document.getElementById('intro-progress-bar');
+                const countdownText = document.getElementById('intro-countdown-text');
+                progressBar.style.width = '100%';
+                countdownText.textContent = '0.0s';
+                overlay.classList.add('intro-exit');
+            }
+
+            function initEvents() {
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+
+                document.getElementById('btn-skip-intro').addEventListener('click', finishIntro);
+                document.getElementById('btn-replay-intro').addEventListener('click', startIntro5Seconds);
+
+                document.getElementById('btn-close-cat-modal').addEventListener('click', () => {
+                    document.getElementById('category-modal').classList.add('hidden');
+                    activeCategoryModalId = null;
+                });
+                document.getElementById('btn-cat-add-media').addEventListener('click', () => {
+                    openAddMediaModal(activeCategoryModalId);
+                });
+
+                document.getElementById('btn-add-gallery-media').addEventListener('click', () => {
+                    openAddMediaModal(null);
+                });
+
+                document.getElementById('btn-close-add-media').addEventListener('click', () => {
+                    document.getElementById('add-media-modal').classList.add('hidden');
+                });
+                document.getElementById('btn-cancel-add-media').addEventListener('click', () => {
+                    document.getElementById('add-media-modal').classList.add('hidden');
+                });
+                document.getElementById('media-source-select').addEventListener('change', toggleSourceInputs);
+                document.getElementById('media-type-select').addEventListener('change', updateMediaPreview);
+                document.getElementById('media-url-input').addEventListener('input', updateMediaPreview);
+                document.getElementById('media-title-input').addEventListener('input', updateMediaPreview);
+
+                document.getElementById('media-file-input').addEventListener('change', (e) => {
+                    const file = e.target.files && e.target.files[0];
+                    if (!file) {
+                        pendingFileDataUrl = null;
+                        updateMediaPreview();
+                        return;
+                    }
+                    const typeSelect = document.getElementById('media-type-select');
+                    if (file.type.startsWith('video/')) {
+                        typeSelect.value = 'video';
+                    } else if (file.type.startsWith('image/')) {
+                        typeSelect.value = 'image';
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        pendingFileDataUrl = reader.result;
+                        updateMediaPreview();
+                    };
+                    reader.readAsDataURL(file);
+                });
+
+                document.getElementById('add-media-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (!isAdminLoggedIn) {
+                        showToast('Chỉ Quản trị viên mới có thể thêm tư liệu.', 'error');
+                        return;
+                    }
+
+                    const category = document.getElementById('media-category-select').value;
+                    const type = document.getElementById('media-type-select').value;
+                    const source = document.getElementById('media-source-select').value;
+                    const title = document.getElementById('media-title-input').value.trim();
+                    const urlInput = document.getElementById('media-url-input').value.trim();
+
+                    const finalUrl = source === 'file' ? pendingFileDataUrl : urlInput;
+                    if (!finalUrl) {
+                        showToast('Vui lòng nhập đường dẫn URL hoặc chọn file.', 'error');
+                        return;
+                    }
+
+                    const newItem = {
+                        id: `media-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+                        category,
+                        type,
+                        title,
+                        url: finalUrl,
+                    };
+
+                    mediaItems.unshift(newItem);
+                    saveMedia();
+                    syncAdminUI();
+                    document.getElementById('add-media-modal').classList.add('hidden');
+                });
+
+                document.getElementById('btn-close-admin-login').addEventListener('click', () => {
+                    document.getElementById('admin-login-modal').classList.add('hidden');
+                });
+                document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const pinVal = document.getElementById('admin-pin-input').value.trim();
+                    const errEl = document.getElementById('admin-login-error');
+
+                    if (pinVal === currentAdminPin) {
+                        isAdminLoggedIn = true;
+                        sessionStorage.setItem(STORAGE_ADMIN_SESSION_KEY, 'true');
+                        document.getElementById('admin-login-modal').classList.add('hidden');
+                        syncAdminUI();
+                        showToast('Đăng nhập Quản trị thành công.');
+                    } else {
+                        errEl.textContent = 'Mã PIN quản trị chưa đúng. Vui lòng kiểm tra lại.';
+                        errEl.classList.remove('hidden');
+                    }
+                });
+
+                document.getElementById('btn-admin-logout').addEventListener('click', handleAdminLogout);
+                document.getElementById('btn-open-change-pin').addEventListener('click', () => {
+                    document.getElementById('change-pin-form').reset();
+                    document.getElementById('change-pin-modal').classList.remove('hidden');
+                });
+                document.getElementById('btn-close-change-pin').addEventListener('click', () => {
+                    document.getElementById('change-pin-modal').classList.add('hidden');
+                });
+                document.getElementById('change-pin-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (!isAdminLoggedIn) return;
+                    const currPin = document.getElementById('current-pin-input').value.trim();
+                    const nextPin = document.getElementById('new-pin-input').value.trim();
+
+                    if (currPin !== currentAdminPin) {
+                        showToast('Mã PIN hiện tại không chính xác.', 'error');
+                        return;
+                    }
+                    if (nextPin.length < 4) {
+                        showToast('Mã PIN mới phải có ít nhất 4 ký tự.', 'error');
+                        return;
+                    }
+
+                    currentAdminPin = nextPin;
+                    try {
+                        localStorage.setItem(STORAGE_PIN_KEY, nextPin);
+                    } catch (err) {
+                        console.error(err);
+                    }
+                    document.getElementById('default-pin-hint').textContent = currentAdminPin;
+                    document.getElementById('change-pin-modal').classList.add('hidden');
+                    showToast('Đã cập nhật mã PIN quản trị mới.');
+                });
+
+                document.getElementById('btn-close-lightbox').addEventListener('click', () => {
+                    document.getElementById('lightbox-modal').classList.add('hidden');
+                    document.getElementById('lightbox-content').innerHTML = '';
+                });
+            }
+
+            window.addEventListener('DOMContentLoaded', () => {
+                loadState();
+                initEvents();
+                syncAdminUI();
+                initFirebaseSync();
+                startIntro5Seconds();
+            });
+        })();
+    </script>
+</body>
+</html>
